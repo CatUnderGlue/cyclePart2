@@ -11,9 +11,10 @@ public class Main {
          */
         System.out.println("Задача №1");
         int intoTheBank = 15_000;
+        int  toAccumulate = 2_459_000;
         int total = 0;
         int month = 0;
-        while (total < 2_459_000) {
+        while (total < toAccumulate) {
             total += intoTheBank;
             total += total / 100;
             month++;
@@ -57,11 +58,12 @@ public class Main {
         int populationOfCountyY = 12_000_000;
         int birthRate = (populationOfCountyY / 1000) * 17;
         int mortalityRate = (populationOfCountyY / 1000) * 8;
-        int count2 = 1;
-        while (count2 < 11) {
+        int years = 10;
+        count = 0;
+        while (count < years) {
             populationOfCountyY += (birthRate - mortalityRate);
-            System.out.println("Год " + count2 + ", численность населения составляет " + populationOfCountyY);
-            count2++;
+            System.out.println("Год " + count + ", численность населения составляет " + populationOfCountyY);
+            count++;
         }
         System.out.println();
 
@@ -75,16 +77,18 @@ public class Main {
         Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
          */
         System.out.println("Задача №4");
-        int capital4 = 15_000;
-        int percent4 = 7;
-        int month4 = 1;
-        while (capital4 < 12_000_000) {
-            capital4 += (capital4 / 100) * percent4;
-            System.out.println("Месяц " + month4 + ", сумма накоплений " + capital4);
-            month4++;
+        int capital = 15_000;
+        toAccumulate = 12_000_000;
+        int percent = 7;
+        month = 1;
+
+        while (capital < toAccumulate) {
+            capital += (capital / 100) * percent;
+            System.out.println("Месяц " + month + ", сумма накоплений " + capital);
+            month++;
         }
-        System.out.println("Кол-во месяцев для накопления: " + (month4 - 1));
-        System.out.println("Итоговая сумма: " + capital4);
+        System.out.println("Кол-во месяцев для накопления: " + (month - 1));
+        System.out.println("Итоговая сумма: " + capital);
         System.out.println();
 
         // Задача 5
@@ -93,18 +97,17 @@ public class Main {
         а только каждый шестой. Должны быть видны накопления за 6, 12, 18, 24-й и следующие месяцы.
          */
         System.out.println("Задача №5");
-        int capital5 = 15_000;
-        int percent5 = 7;
-        int month5 = 1;
-        while (capital5 < 12_000_000) {
-            capital5 += (capital5 / 100) * percent5;
-            if (month5 % 6 == 0) {
-                System.out.println("Месяц " + month5 + ", сумма накоплений " + capital5);
+        capital = 15_000;
+        month = 1;
+        while (capital < toAccumulate) {
+            capital += (capital / 100) * percent;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ", сумма накоплений " + capital);
             }
-            month5++;
+            month++;
         }
-        System.out.println("Кол-во месяцев для накопления: " + (month5 - 1));
-        System.out.println("Итоговая сумма: " + capital5);
+        System.out.println("Кол-во месяцев для накопления: " + (month - 1));
+        System.out.println("Итоговая сумма: " + capital);
         System.out.println();
 
         // Задача 6
@@ -115,16 +118,15 @@ public class Main {
         Напишите программу, которая будет выводить сумму накоплений за каждые полгода в течение 9 лет.
          */
         System.out.println("Задача №6");
-        int years = 12 * 9;
-        int capital6 = 15_000;
-        int percent6 = 7;
-        int month6 = 1;
-        while (month6 <= years) {
-            capital6 += (capital6 / 100) * percent6;
-            if (month6 % 6 == 0) {
-                System.out.println("Полугодие №" + (month6 / 6) + ", сумма накоплений " + capital6);
+        years = 12 * 9;
+        capital = 15_000;
+        month = 1;
+        while (month <= years) {
+            capital += (capital / 100) * percent;
+            if (month % 6 == 0) {
+                System.out.println("Полугодие №" + (month / 6) + ", сумма накоплений " + capital);
             }
-            month6++;
+            month++;
         }
         System.out.println();
 

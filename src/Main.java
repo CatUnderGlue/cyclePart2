@@ -13,7 +13,7 @@ public class Main {
         int intoTheBank = 15_000;
         int total = 0;
         int month = 0;
-        while (total < 2_459_000){
+        while (total < 2_459_000) {
             total += intoTheBank;
             total += total / 100;
             month++;
@@ -33,15 +33,16 @@ public class Main {
          */
         System.out.println("Задача №2");
         int count = 1;
-        while (count < 11){
+        while (count < 11) {
             System.out.print(count + " ");
             count++;
         }
         System.out.println();
         count--;
-        for (; count > 0; count--){
+        for (; count > 0; count--) {
             System.out.print(count + " ");
         }
+        System.out.println();
         System.out.println();
 
         // Задача 3
@@ -57,10 +58,129 @@ public class Main {
         int birthRate = (populationOfCountyY / 1000) * 17;
         int mortalityRate = (populationOfCountyY / 1000) * 8;
         int count2 = 1;
-        while (count2 < 11){
+        while (count2 < 11) {
             populationOfCountyY += (birthRate - mortalityRate);
             System.out.println("Год " + count2 + ", численность населения составляет " + populationOfCountyY);
             count2++;
         }
+        System.out.println();
+
+        // Задача 4
+        /*
+        Василий решил положить деньги на накопительный счет, где каждый месяц к сумме его вклада
+        добавляется еще 7%. Первоначальная сумма вклада — 15 тысяч рублей.
+        Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить, чтобы собрать
+        сумму в 12 миллионов рублей при условии, что процент банка от накоплений
+        не меняется, а всегда равен 7%.
+        Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
+         */
+        System.out.println("Задача №4");
+        int capital4 = 15_000;
+        int percent4 = 7;
+        int month4 = 1;
+        while (capital4 < 12_000_000) {
+            capital4 += (capital4 / 100) * percent4;
+            System.out.println("Месяц " + month4 + ", сумма накоплений " + capital4);
+            month4++;
+        }
+        System.out.println("Кол-во месяцев для накопления: " + (month4 - 1));
+        System.out.println("Итоговая сумма: " + capital4);
+        System.out.println();
+
+        // Задача 5
+        /*
+        Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы подряд,
+        а только каждый шестой. Должны быть видны накопления за 6, 12, 18, 24-й и следующие месяцы.
+         */
+        System.out.println("Задача №5");
+        int capital5 = 15_000;
+        int percent5 = 7;
+        int month5 = 1;
+        while (capital5 < 12_000_000) {
+            capital5 += (capital5 / 100) * percent5;
+            if (month5 % 6 == 0) {
+                System.out.println("Месяц " + month5 + ", сумма накоплений " + capital5);
+            }
+            month5++;
+        }
+        System.out.println("Кол-во месяцев для накопления: " + (month5 - 1));
+        System.out.println("Итоговая сумма: " + capital5);
+        System.out.println();
+
+        // Задача 6
+        /*
+        Василий решил, что будет копить деньги ближайшие 9 лет. Он хочет знать, какой будет сумма
+        его накоплений каждые полгода на протяжении этих 9 лет.
+        Исходная сумма всё та же — 15 тысяч рублей, проценты банка – 7% ежемесячно.
+        Напишите программу, которая будет выводить сумму накоплений за каждые полгода в течение 9 лет.
+         */
+        System.out.println("Задача №6");
+        int years = 12 * 9;
+        int capital6 = 15_000;
+        int percent6 = 7;
+        int month6 = 1;
+        while (month6 <= years) {
+            capital6 += (capital6 / 100) * percent6;
+            if (month6 % 6 == 0) {
+                System.out.println("Полугодие №" + (month6 / 6) + ", сумма накоплений " + capital6);
+            }
+            month6++;
+        }
+        System.out.println();
+
+        // Задача 7
+        /*
+        В компании пятница — отчетный день.
+        Нужно написать программу, которая считает дни месяца по датам, определяет, какой день пятница,
+        и выводит сообщение с напоминанием, что нужно подготовить еженедельный отчет.
+        Создайте переменную типа int, которая хранит в себе номер первой пятницы месяца (число от 1 до 7).
+        Выведите на каждую пятницу месяца (включая полученную) сообщение следующего вида:
+        «Сегодня пятница, ...-е число. Необходимо подготовить отчет».
+        В нашем месяце 31 день. В результате у вас должно получиться от 4 до 5 сообщений
+        с напоминаниями по разным датам.
+         */
+        System.out.println("Задача №7");
+        int friday = 1;
+        int daysInMonth = 31;
+        while (friday <= daysInMonth) {
+            System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчёт.");
+            friday += 7;
+        }
+        System.out.println();
+
+        // Задача 8
+        /*
+        Нам нужно написать астрономическое приложение, которое считает, когда над Землей пролетает комета.
+        Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        В консоль нужно вывести все годы за последние 200 лет, когда появлялась комета,
+        а также следующий год ее появления (ближайшие 100 лет).
+        Для вычисления периода можно создать две дополнительные переменные, которые содержат
+        год за 200 лет до текущего (из созданной ранее переменной) в качестве старта и 100 лет после
+        в качестве завершения периода расчета.
+        В результате решения задачи в консоли должен получиться следующий результат:
+        1896
+        1975
+        2054
+         */
+        System.out.println("Задача №8");
+        // int zeroYear = 0;
+        int currentYear = 2022;
+        int prevYears = currentYear - 200;
+        int nextYears = currentYear + 100;
+        /*
+        while (zeroYear <= nextYears){
+            zeroYear += 79;
+            if (zeroYear > prevYears && zeroYear < nextYears){
+                System.out.println(zeroYear);
+            }
+        }
+        */
+        for (int i = 0; i <= nextYears; i += 79) {
+            if (i > prevYears && i < nextYears) {
+                System.out.println(i);
+            }
+        }
+        System.out.println();
+
     }
 }
